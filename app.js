@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 const session = require("express-session");
 var hbs = require("express-handlebars");
 
-require("dotenv").config();
+dotenv.config();
 //router
 var indexRouter = require("./routes/index");
 var adminRouter = require("./routes/admin");
