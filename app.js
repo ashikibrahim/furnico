@@ -3,10 +3,11 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-require("dotenv").config();
+const dotenv = require("dotenv");
 const session = require("express-session");
 var hbs = require("express-handlebars");
 
+require("dotenv").config();
 //router
 var indexRouter = require("./routes/index");
 var adminRouter = require("./routes/admin");
