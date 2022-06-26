@@ -1,0 +1,126 @@
+
+
+  <!-- Required meta tags -->
+  <link rel="stylesheet" type="text/css" href="/user/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>homedecor</title>
+  {{!--
+  <link rel="icon" href="img/favicon.png"> --}}
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- animate CSS -->
+  <link rel="stylesheet" href="/css/animate.css">
+  <!-- owl carousel CSS -->
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/lightslider.min.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="/css/all.css">
+  <!-- flaticon CSS -->
+  <link rel="stylesheet" href="/css/flaticon.css">
+  <link rel="stylesheet" href="/css/themify-icons.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+  <!-- style CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  {{!-- fontawesome --}}
+  <script src="https://kit.fontawesome.com/5a7e8b1c8e.js" crossorigin="anonymous"></script>
+  {{!-- index add to cart not refresh --}}
+  <script src="/js/ajax.js"></script>
+
+<body style="margin-top: 120px;">
+    
+
+
+
+<div class="container rounded bg-white mt-5 mb-5"  style="margin-top: 300px;" >
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{details.username}}</span><span class="text-black-50">{{details.email}}</span><span> </span></div>
+        </div>
+          {{!-- <form action="/address" method="post"> --}}
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">  
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+              <form action="/addAddress" method="post">
+                <div class="row mt-2">
+                    <div class="col-md-12"><label class="labels">Name</label><input type="text" name="fname" class="form-control" placeholder="first name" value="{{details.username}}"></div>
+                    {{!-- <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div> --}}
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" name=" mobile"  class="form-control" placeholder="enter phone number" value="{{details.mobilenumber}}"></div>
+                     <div class="col-md-12"><label class="labels">Email ID</label><input type="text" name="email" class="form-control" placeholder="enter email id" value="{{details.email}}"></div>
+                    <div class="col-md-12"><label class="labels">House Name</label><input type="text" name="house" class="form-control" placeholder="enter house name" value="{{details.housename}}"></div>
+                    {{!-- <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> --}}
+                    <div class="col-md-12"><label class="labels">Pincode</label><input type="number" name="pincode" class="form-control" placeholder="enter pincode" value="{{details.pincode}}"></div>
+                    <div class="col-md-12"><label class="labels">district</label><input type="text" name="district" class="form-control" placeholder="enter area" value="{{details.district}}"></div>
+                    <div class="col-md-12"><label class="labels">City</label><input type="text" name="city" class="form-control"  placeholder="enter city" value="{{details.city}}"></div>
+
+                   
+                   
+                    {{!-- <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div> --}}
+                </div>
+                <div class="row mt-3">
+                   
+                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" name="state" class="form-control" value="{{details.state}}" placeholder="state"></div>
+                     {{!-- <div class="col-md-6"><label class="labels">Country</label><input type="text" name="country"  class="form-control" placeholder="country" value="{{details.country}}"></div> --}}
+                </div>
+                <div class="mt-5 text-center"><input class="btn btn-primary profile-button" type="submit" value="Save Profile" ></div>
+                </form>
+            </div>
+        </div>
+        {{!-- </form> --}}
+        {{!-- <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
+                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
+            </div>
+        </div> --}}
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<!-- jquery plugins here-->
+<!-- jquery -->
+<script src="/js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="/js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="/js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="/js/jquery.magnific-popup.js"></script>
+<!-- swiper js -->
+<script src="/js/lightslider.min.js"></script>
+<!-- swiper js -->
+<script src="/js/masonry.pkgd.js"></script>
+<!-- particles js -->
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.nice-select.min.js"></script>
+<!-- slick js -->
+<script src="/js/slick.min.js"></script>
+<script src="/js/swiper.jquery.js"></script>
+<script src="/js/jquery.counterup.min.js"></script>
+<script src="/js/waypoints.min.js"></script>
+<script src="/js/contact.js"></script>
+<script src="/js/jquery.ajaxchimp.min.js"></script>
+<script src="/js/jquery.form.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/mail-script.js"></script>
+<script src="/js/stellar.js"></script>
+<!-- custom js -->
+<script src="/js/theme.js"></script>
+<script src="/js/custom.js"></script>
+
+
+
+                                                                                                                                                                                                                                                                                                  
+
+
+

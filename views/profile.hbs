@@ -1,0 +1,207 @@
+<!-- Required meta tags -->
+  <link rel="stylesheet" type="text/css" href="/user/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>homedecor</title>
+  {{!--
+  <link rel="icon" href="img/favicon.png"> --}}
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- animate CSS -->
+  <link rel="stylesheet" href="/css/animate.css">
+  <!-- owl carousel CSS -->
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/lightslider.min.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="/css/all.css">
+  <!-- flaticon CSS -->
+  <link rel="stylesheet" href="/css/flaticon.css">
+  <link rel="stylesheet" href="/css/themify-icons.css">
+  <!-- font awesome CSS -->
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+  <!-- style CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  {{!-- fontawesome --}}
+  <script src="https://kit.fontawesome.com/5a7e8b1c8e.js" crossorigin="anonymous"></script>
+  {{!-- index add to cart not refresh --}}
+  <script src="/js/ajax.js"></script>
+
+
+<style>
+    body {
+        background: #f7f7ff;
+        margin-top: 20px;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid transparent;
+        border-radius: .25rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 6px 0 rgb(218 218 253 / 65%), 0 2px 6px 0 rgb(206 206 238 / 54%);
+    }
+
+    .me-2 {
+        margin-right: .5rem !important;
+    }
+</style>
+<body>
+<div class="container" style="margin-top: 100px;" >
+    <div class="main-body">
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
+                                class="rounded-circle" width="150">
+                            <div class="mt-3">
+                                <h4>{{user.name}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card">
+                    {{#each user.address}}
+                    <div class="card-body">
+                        <hr>
+                        <div class="row mb-3 mt-4">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">FIRST NAME</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-0">: {{this.fname}}</h6>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">LAST NAME</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-0">: {{this.lname}}</h6>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">HOUSE NAME</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-0">: {{this.house}} </h6>
+                            </div>
+                        </div>
+
+                       
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">TOWN/CITY</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-0">: {{this.city}}</h6>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">DISTRICT</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-0">: {{this.district}} </h6>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">STATE</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-0">: {{this.state}} </h6>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">PIN CODE</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-0">: {{this.pincode}} </h6>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">E-MAIL ADDRESS</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-0">:{{this.email}}</h6>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">MOBILE NUMBER</h6>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="mb-0">: {{this.mobile}} </h6>
+                            </div>
+                        </div>
+                        <div class="float-end">
+                            
+                            <a href="/editAddress/{{this._id}}" class="btn btn-primary ">Edit Address</a>
+                            <a href="/deleteAddress/{{this._id}}" class="btn btn-danger ">Delete Address</a>
+                        </div>
+                    </div>
+                    {{/each}}  
+                    <hr>
+                    <a href="/addAddress" style="width: 25%;margin: auto;" class="btn btn-success px-4 mb-3 mt-3">Add
+                        New Address</a>
+                    <hr>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jquery plugins here-->
+<!-- jquery -->
+<script src="/js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="/js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="/js/bootstrap.min.js"></script>
+<!-- easing js -->
+<script src="/js/jquery.magnific-popup.js"></script>
+<!-- swiper js -->
+<script src="/js/lightslider.min.js"></script>
+<!-- swiper js -->
+<script src="/js/masonry.pkgd.js"></script>
+<!-- particles js -->
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.nice-select.min.js"></script>
+<!-- slick js -->
+<script src="/js/slick.min.js"></script>
+<script src="/js/swiper.jquery.js"></script>
+<script src="/js/jquery.counterup.min.js"></script>
+<script src="/js/waypoints.min.js"></script>
+<script src="/js/contact.js"></script>
+<script src="/js/jquery.ajaxchimp.min.js"></script>
+<script src="/js/jquery.form.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/mail-script.js"></script>
+<script src="/js/stellar.js"></script>
+<!-- custom js -->
+<script src="/js/theme.js"></script>
+<script src="/js/custom.js"></script>
+</body>
+
+
+
+
+
+
+

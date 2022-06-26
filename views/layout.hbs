@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <script src="https://kit.fontawesome.com/5a7e8b1c8e.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="js/ajax.js"></script>
+     
+  </head>
+  <body>
+    {{#if admin}}
+    {{>admin-header}}
+    {{else}}
+    {{>user-header}}
+    {{/if}}
+    {{{body}}}
+   
+  </body>
+</html>
