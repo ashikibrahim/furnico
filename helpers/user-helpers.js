@@ -53,8 +53,8 @@ module.exports = {
               port: 465,
               secure: true,
               auth: {
-                user: "ashiknodetest@gmail.com",
-                pass: "uijsrptgnrjkvjtd",
+                user: "furnico.shop@gmail.com",
+                pass: "sniusbhqxpjrdfgh",
               },
               tls: {
                 rejectUnauthorized: false,
@@ -62,7 +62,7 @@ module.exports = {
             });
 
             const mailDetails = {
-              from: "ashiknodetest@gmail.com",
+              from: "furnico.shop@gmail.com",
               to: userDataa.email,
               subject: "just testing nodemailer",
               text: "just random texts ",
@@ -161,8 +161,8 @@ module.exports = {
             port: 465,
             secure: true,
             auth: {
-              user: "ashiknodetest@gmail.com",
-              pass: "uijsrptgnrjkvjtd",
+              user: "furnico.shop@gmail.com",
+              pass: "sniusbhqxpjrdfgh",
             },
 
             tls: {
