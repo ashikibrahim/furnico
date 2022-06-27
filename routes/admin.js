@@ -100,7 +100,7 @@ router.get("/delete-product/:id", (req, res) => {
     const subcategory = await adminHelper.getallsubcategory();
     console.log("got all details");
     console.log(product.productName);
-    res.render("admin/edit-Product", {
+    res.render("admin/edit-product", {
       subcategory,
       category,
       brandName,
