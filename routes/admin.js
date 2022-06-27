@@ -76,6 +76,7 @@ router.post(
       });
   }
 );
+
 router.get("/delete-product/:id", (req, res) => {
   console.log("delete111");
   const proId = req.params.id;
@@ -88,7 +89,8 @@ router.get("/delete-product/:id", (req, res) => {
     res.redirect("/admin/productmanagement");
   });
   console.log(proId);
-}),
+});
+
   router.get("/edit-Product/:id", async (req, res) => {
     console.log("product details");
     let product = await adminHelper.getProductDetails(req.params.id);
