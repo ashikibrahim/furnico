@@ -6,7 +6,7 @@ const product = require("../models/products");
 const cartModel = require("../models/cart");
 const Razorpay = require("razorpay");
 const orderModel = require("../models/order");
-
+const mongoose = require("mongoose");
 // middleware to check wether user loggedin.
 const verifyLogin = (req, res, next) => {
   if (req.session.logedin) {

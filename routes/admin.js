@@ -6,7 +6,7 @@ var Storage = require("../middleware/multer");
 const category = require("../models/category");
 const product = require("../models/products");
 const brand = require("../models/brands");
-
+const mongoose = require("mongoose");
 router.get("/", function (req, res, next) {
   res.render("admin/adminlogin", { layout: false });
 });
