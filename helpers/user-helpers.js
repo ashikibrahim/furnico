@@ -8,7 +8,7 @@ const orderModel = require("../models/order");
 const wishlistModel = require("../models/wishlist");
 const categoryModel = require("../models/category");
 const Razorpay = require("razorpay");
-
+const mongoose = require("mongoose");
 var instance = new Razorpay({
   key_id: "rzp_test_lF7aY9wN07rlA0",
   key_secret: "TkHwqPjwpAC8GiEowVlZMEWI",
