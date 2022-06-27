@@ -380,28 +380,26 @@ router.get("/product-details/:id", async (req, res) => {
   res.render("product-details", { product, layout: false });
 });
 
-router.get("/profile", verifyLogin, async (req, res) => {
+router.get("/addAddress", verifyLogin,async(req, res) => {
   const user = req.session.user;
-  res.render("profile", { user });
+  const details = await userHelper.getUserDetail(user);
+  console.log(user,"user?");
+  res.render("addAddress",{ user,details});
 });
 
-router.get("/addAddress", (req, res) => {
-  let user = req.session.user;
-  res.render("addAddress", { user });
-});
+//post profile detail
+router.post('/addAddress',verifyLogin,(req,res)=>{
+  // console.log(req.body);
+  userHelper.addProfile(req.body).then((response)=>{
+    res.redirect('/addAddress')
+  })
+})
 
-router.post("/addAddress", (req, res) => {
-  console.log(req.body);
-  userHelper.addAddress(req.session.user._id, req.body).then((response) => {
-    res.redirect("/address-page");
-  });
-});
-router.get("/address-page", async (req, res) => {
-  // console.log("hsu-------------------------------------------");
-  const Addresses = await userHelper.getAddresses(req.session.user);
-  console.log(Addresses);
-  let user = req.session.user;
-  res.render("profile", { user, Addresses });
-});
-
+// router.get("/deleteAddress/:id", (req, res) => {
+//   console.log("f----------------------------------");
+//   console.log(req.params.id);
+//   userHelper.deleteAddress(req.params.id, req.session.user).then((response) => {
+//     res.redirect("/address-page");
+//   });
+// });
 module.exports = router;

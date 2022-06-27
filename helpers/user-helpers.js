@@ -649,35 +649,66 @@ module.exports = {
     });
   },
 
-  addAddress: (userId, data) => {
+  // addAddress: (userId,data) => {
+  //   return new Promise(async (resolve, reject) => {
+  //     const user = userData.findOne({ _id: userId });
+  //     await userData.findOneAndUpdate(
+  //       { _id: userId },
+  //       {
+  //         $push: {
+  //           address: {
+  //             fname: data.fname,
+  //             lname: data.lname,
+  //             house: data.house,
+  //             city: data.city,
+  //             district: data.district,
+  //             state: data.state,
+  //             pincode: data.pincode,
+  //             email: data.email,
+  //             mobile: data.mobile,
+  //           },
+  //         },
+  //       }
+  //     );
+  //     resolve();
+  //   });
+  // },
+  // getAddresses: (user) => {
+  //   return new Promise(async (resolve, response) => {
+  //     const Addresses = await userData.findOne({ _id: user }).lean();
+  //     // console.log(Addresses.address);
+  //     resolve(Addresses);
+  //   });
+  // },
+
+  addProfile: (Data) => {
     return new Promise(async (resolve, reject) => {
-      const user = userData.findOne({ _id: userId });
       await userData.findOneAndUpdate(
-        { _id: userId },
+        { email:Data.email },
         {
           $push: {
             address: {
-              fname: data.fname,
-              lname: data.lname,
-              house: data.house,
-              city: data.city,
-              district: data.district,
-              state: data.state,
-              pincode: data.pincode,
-              email: data.email,
-              mobile: data.mobile,
+              fname: Data.fname,
+              lname: Data.lname,
+              house:Data.house,
+              city: Data.city,
+              district:Data.district,
+              state: Data.state,
+              pincode:Data.pincode,
+              email: Data.email,
+              mobile: Data.mobile,
             },
           },
         }
       );
+      console.log("profile Updated Saved");
       resolve();
     });
   },
-  getAddresses: (user) => {
-    return new Promise(async (resolve, response) => {
-      const Addresses = await userData.findOne({ _id: user }).lean();
-      // console.log(Addresses.address);
-      resolve(Addresses);
+  getUserDetail: (user) => {
+    return new Promise(async (resolve, reject) => {
+      const userDetail =await userData.findOne({email:user.email }).lean();
+      resolve(userDetail);
     });
   },
   getAllCategory: () => {
@@ -686,4 +717,11 @@ module.exports = {
       resolve(allcategory);
     });
   },
+
+  deleteAddress:(addressId,user)=>{
+    return new Promise(async(resolve,reject)=>{
+      const address=await userData.updateOne({_id:user._id},{$pull:{ address: { _id: addressId } }})
+      resolve()
+    })
+  }
 };
