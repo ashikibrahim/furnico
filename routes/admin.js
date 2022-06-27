@@ -106,6 +106,7 @@ router.get("/delete-product/:id", (req, res) => {
       admin: true,
       layout: false,
     });
+   
   });
 
 router.post(
@@ -135,9 +136,10 @@ router.post(
       .updateProduct(req.body, proId, img1, img2, img3, img4)
       .then((response) => {
         console.log(response);
-        // req.flash("msg", "You edited successfully!");
+        
         res.redirect("/admin/productmanagement");
       });
+
   }
 );
 
