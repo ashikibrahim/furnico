@@ -265,11 +265,11 @@ module.exports = {
     });
   },
   unblockuser: (userId) => {
+    console.log(userId,"unblockuser");
     return new Promise(async (resolve, reject) => {
       const user = await userData.findByIdAndUpdate(
-        { _id: userId },
+        { _id:userId },
         { $set: { block: false } },
-        { upsert: true }
       );
       resolve(user);
     });

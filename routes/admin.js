@@ -203,7 +203,7 @@ router.get("/usermanagement", (req, res) => {
 // block and unblock user
 
 router.get("/Blockuser/:id", (req, res) => {
-  const userId = req.params.id;
+  const userId =req.params.id;
   console.log(userId);
   console.log("sdjfhusguasuashguahshasdgs");
   adminHelper.blockuser(userId).then((response) => {
@@ -212,7 +212,8 @@ router.get("/Blockuser/:id", (req, res) => {
   });
 });
 
-router.get("unblockuser/:id", (req, res) => {
+router.get("/unblockuser/:id", (req, res) => {
+  console.log("unblocking get");
   const userId = req.params.id;
   adminHelper.unblockuser(userId).then((response) => {
     res.json({ msg: "you have unblocked", status: true });

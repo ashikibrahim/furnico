@@ -560,15 +560,6 @@ module.exports = {
         });
     });
   },
-  getallorders: (user) => {
-    return new Promise(async (resolve, reject) => {
-      const allorders = await orderModel
-        .find({ user_Id: user })
-        .populate("product.pro_Id")
-        .lean();
-      resolve(allorders);
-    });
-  },
 
   addToWishlist: (proId, userId) => {
     return new Promise(async (resolve, reject) => {
@@ -649,44 +640,14 @@ module.exports = {
     });
   },
 
-  // addAddress: (userId,data) => {
-  //   return new Promise(async (resolve, reject) => {
-  //     const user = userData.findOne({ _id: userId });
-  //     await userData.findOneAndUpdate(
-  //       { _id: userId },
-  //       {
-  //         $push: {
-  //           address: {
-  //             fname: data.fname,
-  //             lname: data.lname,
-  //             house: data.house,
-  //             city: data.city,
-  //             district: data.district,
-  //             state: data.state,
-  //             pincode: data.pincode,
-  //             email: data.email,
-  //             mobile: data.mobile,
-  //           },
-  //         },
-  //       }
-  //     );
-  //     resolve();
-  //   });
-  // },
-  // getAddresses: (user) => {
-  //   return new Promise(async (resolve, response) => {
-  //     const Addresses = await userData.findOne({ _id: user }).lean();
-  //     // console.log(Addresses.address);
-  //     resolve(Addresses);
-  //   });
-  // },
+  
 
-  addProfile: (Data) => {
+  addProfile:(Data) => {
     return new Promise(async (resolve, reject) => {
       await userData.findOneAndUpdate(
         { email:Data.email },
         {
-          $push: {
+          $set: {
             address: {
               fname: Data.fname,
               lname: Data.lname,

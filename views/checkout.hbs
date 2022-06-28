@@ -135,8 +135,34 @@
   <!--================Checkout Area =================-->
   <section class="checkout_area padding_top">
     <div class="container">
+       <div class="returning_customer mb-4 mt-4 ">
+              <div class="check_title">
+                <h5 style="color:darkmagenta">
+                  please select a address
+                  {{!-- <a href="#">Click here to login</a> --}}
+                </h5>
+              </div>
+              </div>
+              <div class=" container-fluid content-row  mb-4 ">
+              
+              {{!-- cardss --}}
+              <div class="row mb-4 mt-4 ">
+              
+           
+  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+    
+    <div class="card rounded h-100 ">
+      <h3></h3>
+      <p style="color:black">{{Addresses.address.fname}} {{Addresses.address.lname}}, {{Addresses.address.house}}, {{Addresses.address.town}}, {{Addresses.address.district}}, {{Addresses.address.state}}, Pincode: {{Addresses.address.pincode}}</p><P style="color:black">Email: {{Addresses.email}}</P>
+      <p style="color:black">Mobile: {{Addresses.address.mobile}}</p>
+      <button class="btn btn-primary" onclick="autofill('{{Addresses.address.fname}}','{{Addresses.address.mobile}}','{{Addresses.address.email}}','{{Addresses.address.house}}','{{Addresses.address.city}}','{{Addresses.address.district}}','{{Addresses.address.state}}','{{Addresses.address.pincode}}')">use this Address</button>
+    </div>
+    
+  </div>
 
-      <div class="cupon_area">
+    </div>
+    </div>
+      {{!-- <div class="cupon_area">
         <div class="check_title">
           <h2>
             Have a coupon?
@@ -145,7 +171,7 @@
         </div>
         <input type="text" placeholder="Enter coupon code" />
         <a class="tp_btn" href="#">Apply Coupon</a>
-      </div>
+      </div> --}}
       <div class="billing_details">
         <div class="row">
           <div class="billing_details ">
@@ -188,9 +214,9 @@
                         <option>Pakistan</option>
                       </select>
                     </div> --}}
-                    <div class="col-md-12 form-group p_star" style="border: 1px solid #eee;">
+                    {{!-- <div class="col-md-12 form-group p_star" style="border: 1px solid #eee;">
                       <input type="text" class="form-control" id="localplace" name="localplace" placeholder="Locality" />
-                    </div>
+                    </div> --}}
                     {{!-- <div class="col-md-12 form-group p_star">
                       <input type="text" class="form-control" id="add2" name="add2" placeholder="Address line 02" />
                     </div> --}}
@@ -495,6 +521,26 @@ var rzp1 = new Razorpay(options);
         })
       }
 </script>
+  <script>
+
+      function autofill(fname,mobile,email,house,localplace,town,district,state,pincode){
+
+         
+        
+        document.getElementById('fname').value = fname
+
+				document.getElementById('mobile').value = mobile
+        document.getElementById('email').value = email
+        document.getElementById('house').value = house
+        document.getElementById('localplace').value = localplace
+				document.getElementById('town').value = town
+				document.getElementById('district').value = district
+				document.getElementById('state').value = state
+				document.getElementById('pincode').value = pincode
+				
+				
+      }
+    </script>
 
    <!-- jquery plugins here-->
     <script src="js/jquery-1.12.1.min.js"></script>

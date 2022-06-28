@@ -472,6 +472,7 @@
 <script>
     // delete popup
     function unblockuser(userid) {
+                   
 					Swal.fire({
 						title: 'Are you sure?',
 						text: "You won't be able to revert this!",
@@ -488,6 +489,7 @@
 								'success'
 							).then(() => {
 								UnBlock()
+
 							})
 						}
 					})
@@ -498,7 +500,7 @@
 							success: (response) => {
                                 {{!-- alert(response) --}}
 								if (response) {
-									// alert('product deleted')
+									
 									location.reload()
 								}
 							}

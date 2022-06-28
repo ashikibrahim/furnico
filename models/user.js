@@ -23,7 +23,7 @@ const userSchema=new Schema({
         block:{
                 type:Boolean,
                  },
-        address:[{
+        address:{
                 fname:String,
                 lname:String,
                 house:String,
@@ -34,7 +34,7 @@ const userSchema=new Schema({
                 email:String,
                 mobile:String,
                 address:String
-            }],
+            },
 
 })
 const User=mongoose.model('user',userSchema)

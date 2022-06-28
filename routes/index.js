@@ -7,6 +7,7 @@ const cartModel = require("../models/cart");
 const Razorpay = require("razorpay");
 const orderModel = require("../models/order");
 const mongoose = require("mongoose");
+const moment=require('moment')
 // middleware to check wether user loggedin.
 const verifyLogin = (req, res, next) => {
   if (req.session.logedin) {
@@ -330,6 +331,9 @@ router.get("/allorders", verifyLogin, (req, res) => {
     const orders = response;
     console.log(orders);
     console.log("all orders ");
+    orders.forEach(element => {
+      element.ordered_on = moment(element.ordered_on).format("MMM Do YY");
+        });
     res.render("viewallorders", { orders, layout: false });
   });
 });
@@ -339,9 +343,16 @@ router.get("/orderdetails/:id", verifyLogin, (req, res) => {
   userHelper.getorderProducts(req.params.id).then((response) => {
     let orderProducts = response;
     console.log(orderProducts);
-    res.render("vieworderdetails", { orderProducts, layout: false });
+    const ordered_on=moment(orderProducts.ordered_on).format("MMM Do YY");
+    res.render("vieworderdetails", { orderProducts,ordered_on,layout: false });
   });
 });
+// router.post('/cancel-order',(req,res)=>{
+//   // console.log(req.body);
+//   userHelper.cancelorder(req.body).then((response)=>{
+//     res.json({status:true})
+//   })
+// })
 
 router.get("/addtowishlist/:id", verifyLogin, (req, res) => {
   userHelper
@@ -389,17 +400,10 @@ router.get("/addAddress", verifyLogin,async(req, res) => {
 
 //post profile detail
 router.post('/addAddress',verifyLogin,(req,res)=>{
-  // console.log(req.body);
   userHelper.addProfile(req.body).then((response)=>{
     res.redirect('/addAddress')
   })
 })
 
-// router.get("/deleteAddress/:id", (req, res) => {
-//   console.log("f----------------------------------");
-//   console.log(req.params.id);
-//   userHelper.deleteAddress(req.params.id, req.session.user).then((response) => {
-//     res.redirect("/address-page");
-//   });
-// });
+
 module.exports = router;

@@ -46,19 +46,19 @@
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
               <form action="/addAddress" method="post">
-              {{#each details.address}}
+              
                 <div class="row mt-2">
-                    <div class="col-md-12"><label class="labels">Name</label><input type="text" name="fname" class="form-control" placeholder="first name" value="{{this.fname}}"></div>
+                    <div class="col-md-12"><label class="labels">Name</label><input type="text" name="fname" class="form-control" placeholder="first name" value="{{details.address.fname}}"></div>
                     {{!-- <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div> --}}
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" name="mobile"  class="form-control" placeholder="enter phone number" value="{{this.mobile}}"></div>
-                     <div class="col-md-12"><label class="labels">Email ID</label><input type="text" name="email" class="form-control" placeholder="enter email id" value="{{this.email}}"></div>
-                    <div class="col-md-12"><label class="labels">House Name</label><input type="text" name="house" class="form-control" placeholder="enter house name" value="{{this.house}}"></div>
+                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" name="mobile"  class="form-control" placeholder="enter phone number" value="{{details.address.mobile}}"></div>
+                     <div class="col-md-12"><input type="text" name="email" class="form-control" placeholder="enter email id" value="{{details.email}}" hidden  ></div>
+                    <div class="col-md-12"><label class="labels">House Name</label><input type="text" name="house" class="form-control" placeholder="enter house name" value="{{details.address.house}}"></div>
                     {{!-- <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div> --}}
-                    <div class="col-md-12"><label class="labels">Pincode</label><input type="number" name="pincode" class="form-control" placeholder="enter pincode" value="{{this.pincode}}"></div>
-                    <div class="col-md-12"><label class="labels">district</label><input type="text" name="district" class="form-control" placeholder="enter area" value="{{this.district}}"></div>
-                    <div class="col-md-12"><label class="labels">City</label><input type="text" name="city" class="form-control"  placeholder="enter city" value="{{this.city}}"></div>
+                    <div class="col-md-12"><label class="labels">Pincode</label><input type="number" name="pincode" class="form-control" placeholder="enter pincode" value="{{details.address.pincode}}"></div>
+                    <div class="col-md-12"><label class="labels">district</label><input type="text" name="district" class="form-control" placeholder="enter area" value="{{details.address.district}}"></div>
+                    <div class="col-md-12"><label class="labels">City</label><input type="text" name="city" class="form-control"  placeholder="enter city" value="{{details.address.city}}"></div>
 
                    
                    
@@ -66,10 +66,10 @@
                 </div>
                 <div class="row mt-3">
                    
-                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" name="state" class="form-control" value="{{this.state}}" placeholder="state"></div>
+                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" name="state" class="form-control" value="{{details.address.state}}" placeholder="state"></div>
                      {{!-- <div class="col-md-6"><label class="labels">Country</label><input type="text" name="country"  class="form-control" placeholder="country" value="{{details.country}}"></div> --}}
                 </div>
-                {{/each}}
+                
                 <div class="mt-5 text-center"><input class="btn btn-primary profile-button" type="submit" value="Save Profile" ></div>
                 </form>
             </div>
