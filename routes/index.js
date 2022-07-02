@@ -369,7 +369,7 @@ router.get("/wishlist", async (req, res) => {
   const user = req.session.user;
   const wishcount = await userHelper.getwishCount(req.session.user._id);
   let wishlist = await userHelper.getwishlist(req.session.user);
-  if (wishlist) res.render("wishlist", { wishlist, wishcount, layout: false });
+  if (wishlist) res.render("wishlist", { wishlist, wishcount});
 });
 
 router.post("/deletewishlist", async (req, res) => {
